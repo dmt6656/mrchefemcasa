@@ -218,11 +218,18 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
 .copybtn{margin-top:.35rem;font:inherit;font-family:ui-monospace,Menlo,Consolas,monospace;cursor:pointer;color:var(--ink);background:transparent;border:2px dashed var(--ink);border-radius:10px;padding:.45rem .9rem;display:inline-flex;gap:.5rem;align-items:center}
 .copybtn:hover{background:color-mix(in srgb,var(--ink) 10%,var(--paper))}
 .copybtn svg{width:16px;height:16px}
-.foil{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .5s}
+.foil{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .5s;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.prize.pop>*{animation:cPop .5s cubic-bezier(.2,.8,.3,1.3) both}
+.prize.pop>*:nth-child(2){animation-delay:.06s}.prize.pop>*:nth-child(3){animation-delay:.12s}.prize.pop>*:nth-child(4){animation-delay:.18s}
+@keyframes cPop{from{opacity:0;transform:translateY(10px) scale(.9)}to{opacity:1;transform:none}}
+html:has(dialog.cupom[open]){overflow:hidden}
+.cupom{overscroll-behavior:contain}
+.scratch,.scratch *{-webkit-user-select:none;user-select:none}
+.copybtn{-webkit-user-select:all;user-select:all}
 .foil.gone{opacity:0;pointer-events:none}
 .cupom .hint{font-size:.9rem;margin:.9rem 0 0}
 .cupom .again{margin-top:.9rem}
-@media (prefers-reduced-motion:reduce){.cupom[open]{animation:none}.foil{transition:none}}
+@media (prefers-reduced-motion:reduce){.cupom[open]{animation:none}.foil{transition:none}.prize.pop>*{animation:none}}
 
 /* alta gastronomia */
 .mtab[hidden]{display:none}
@@ -320,6 +327,19 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
   .ccards{grid-template-columns:1fr;gap:1.1rem}
   .ccard{padding:2rem 1.25rem 1.9rem}
   .cv{font-size:1.35rem;overflow-wrap:anywhere}
+
+  /* cupom de raspar */
+  .cupom{max-height:calc(100dvh - 1rem);overflow-y:auto;overflow-x:visible;padding:.9rem .9rem .5rem;margin:auto}
+  .cupom-box{width:min(400px,calc(100vw - 2.4rem));padding:2.1rem 1.25rem 1.4rem}
+  .cupom-box::before{inset:7px}
+  .cupom-x{top:-10px;right:-10px;width:44px;height:44px;font-size:1.5rem}
+  .cupom h2{font-size:1.45rem}
+  .cupom p{font-size:.98rem;margin-bottom:.9rem}
+  .scratch{height:min(250px,36dvh);min-height:190px;border-radius:14px}
+  .prize .big{font-size:1.9rem}
+  .copybtn{min-height:46px;padding:.55rem 1.1rem;font-size:1.02rem}
+  .cupom .hint{font-size:.92rem;margin-top:.8rem}
+  .cupom .again{width:100%;padding:.85rem 1rem}
 
   /* rodapé */
   footer.site .wrap{flex-direction:column;align-items:center;text-align:center;gap:.4rem}
@@ -658,7 +678,9 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
   var scratch=$('scratch'),canvas=$('foil'),ctx=canvas.getContext('2d'),prize=$('prize'),live=$('live'),again=$('again'),
       hint=$('hint'),copyBtn=$('copyBtn'),iCopy=$('iCopy'),iCheck=$('iCheck'),copyLabel=$('copyLabel'),
       code=$('code').textContent.trim(),off=$('off').textContent.trim(),hintText=hint.textContent,
-      drawing=false,revealed=false,last=null,lastCheck=0,W=0,H=0,dpr=1,copyTimer=null;
+      drawing=false,revealed=false,last=null,lastCheck=0,W=0,H=0,lastW=0,dpr=1,copyTimer=null,
+      touchy=window.matchMedia&&matchMedia('(pointer:coarse)').matches,brush=touchy?54:38,need=touchy?.38:.45;
+  if(touchy){hintText='Passe o dedo sobre o cartão para raspar';hint.textContent=hintText}
 
   function coin(down){
     var g=down?'<g transform="rotate(-28 16 16) translate(1.6 1.6) scale(.9)">':'<g>';
@@ -675,7 +697,7 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
   function mark(){try{localStorage.setItem(KEY,'1')}catch(e){}}
 
   function paintFoil(){
-    var r=scratch.getBoundingClientRect();W=Math.round(r.width);H=Math.round(r.height);
+    W=scratch.clientWidth;H=scratch.clientHeight;lastW=W;
     dpr=Math.min(window.devicePixelRatio||1,2);
     canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
     ctx.globalCompositeOperation='source-over';
@@ -690,20 +712,22 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
     canvas.classList.remove('gone');
   }
 
-  function pos(e){var r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  function pos(e){var r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*(W/(r.width||W)),y:(e.clientY-r.top)*(H/(r.height||H))}}
   function erase(a,b){
-    ctx.globalCompositeOperation='destination-out';ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=38;
+    ctx.globalCompositeOperation='destination-out';ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=(brush||38);
     ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
   }
   function check(){
     if(revealed)return;
     var cw=canvas.width,ch=canvas.height,d=ctx.getImageData(0,0,cw,ch).data,st=Math.round(8*dpr),c=0,t=0;
     for(var y=0;y<ch;y+=st)for(var x=0;x<cw;x+=st){t++;if(d[(y*cw+x)*4+3]<128)c++}
-    if(t&&c/t>=.45)reveal(false);
+    if(t&&c/t>=need)reveal(false);
   }
   function reveal(byKey){
     if(revealed)return;revealed=true;
     canvas.classList.add('gone');prize.removeAttribute('inert');
+    prize.classList.remove('pop');void prize.offsetWidth;prize.classList.add('pop');
+    try{if(navigator.vibrate)navigator.vibrate(byKey?0:[25,40,25])}catch(e){}
     hint.textContent='Cupom liberado! Toque no código para copiar.';again.hidden=false;
     live.textContent='Cupom revelado: '+code+', '+off;
     if(byKey)copyBtn.focus();
@@ -725,7 +749,7 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
   });
 
   again.addEventListener('click',function(){
-    revealed=false;prize.setAttribute('inert','');hint.textContent=hintText;again.hidden=true;live.textContent='';
+    revealed=false;prize.classList.remove('pop');prize.setAttribute('inert','');hint.textContent=hintText;again.hidden=true;live.textContent='';
     resetCopy();paintFoil();scratch.focus();
   });
 
@@ -748,7 +772,7 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
 
   $('cupomX').addEventListener('click',function(){dlg.close()});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
-  window.addEventListener('resize',function(){if(dlg.open&&!revealed&&!drawing)paintFoil()});
+  window.addEventListener('resize',function(){if(dlg.open&&!revealed&&!drawing&&scratch.clientWidth!==lastW)paintFoil()});
 
   if(!seen()){
     setTimeout(function(){
