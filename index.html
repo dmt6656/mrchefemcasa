@@ -122,6 +122,7 @@ section.sep{border-top:1px solid var(--line)}
 @keyframes mIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .ticket h3{font-size:2.3rem;margin-bottom:.4rem}
 .ticket .sub{color:var(--soft);margin-bottom:1.75rem}
+.ticket h3+dl{margin-top:1.4rem}
 .ticket dl{margin:0;display:grid;gap:1rem;align-content:start}
 .ticket dt{font-weight:700}
 .ticket dd{margin:.1rem 0 0}
@@ -389,13 +390,13 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
         </div>
         <aside class="menu">
           <div class="hpanel is-on" role="tabpanel" id="hp0" aria-labelledby="ht0">
-            <h2 data-luxo="Le Bistrô Paris">Conforto Francês</h2>
-            <small data-luxo="Exemplo de menu para eventos<br>R$ 89,90 por pessoa, mínimo de 8 pessoas">Exemplo de menu para eventos<br>R$ 69,90 por pessoa, mínimo de 6 pessoas</small>
+            <h2 data-luxo="Le Bistrô Paris">Menu 3</h2>
+            <small data-luxo="Exemplo de menu para eventos<br>R$ 89,90 por pessoa, mínimo de 8 pessoas">Exemplo de menu para eventos<br>R$ 109,90 por pessoa, mínimo de 10 pessoas</small>
             <dl>
-              <dt>Entrada</dt><dd data-luxo="Quiche de cebola">Quiche de brócolis com queijo parmesão</dd>
+              <dt>Entrada</dt><dd data-luxo="Quiche de cebola">Bruschetta 3 queijos</dd>
               <dt>Salada</dt><dd>Parisiense</dd>
-              <dt>Prato principal</dt><dd data-luxo="Aligot com ragú de carne bovina">Aligot acompanhado de fraldinha cozida</dd>
-              <dt>Sobremesa</dt><dd>Pavê de chocolate</dd>
+              <dt>Prato principal</dt><dd data-luxo="Aligot com ragú de carne bovina">Tilápia ao Mediterrâneo</dd>
+              <dt>Sobremesa</dt><dd>Panna cotta com geleia de frutas vermelhas</dd>
             </dl>
             <a class="mlink" href="#cardapios">Ver todos os cardápios</a>
           </div>
@@ -434,11 +435,11 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
           <p>Jantares e festas servidos em sequência, com entrada, prato principal e sobremesa, para você receber os convidados sem ficar no fogão.</p>
           <p><strong>Ideal para</strong> aniversários, confraternizações e jantares em família ou com amigos.</p>
           <ul>
-            <li data-luxo="Três menus de alta gastronomia, para jantares mais sofisticados">Cinco opções de menu, incluindo o "Monte seu menu"</li>
+            <li data-luxo="Três menus de alta gastronomia, para jantares mais sofisticados">Cinco opções de menu</li>
             <li>Troca de acompanhamentos e adaptação a restrições alimentares</li>
             <li>Mínimo de pessoas conforme o menu escolhido</li>
           </ul>
-          <p class="price" data-luxo="Menus de R$ 85,90 a R$ 119,90 por pessoa">Menus de R$ 55,90 a R$ 99,90 por pessoa</p>
+          <p class="price" data-luxo="Menus de R$ 85,90 a R$ 119,90 por pessoa">Menus de R$ 89,90 a R$ 139,90 por pessoa</p>
           <a class="btn alt" href="#cardapios">Ver cardápios</a>
         </article>
         <article class="svc" id="semanal">
@@ -478,56 +479,41 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
       </div>
       <div class="mwrap">
         <div class="mtabs" role="tablist" aria-label="Cardápios" aria-orientation="vertical">
-        <button class="mtab" data-set="classic" role="tab" id="t0" aria-controls="m0" aria-selected="true" tabindex="0"><strong>Essência do Campo</strong><span>R$ 55,90 por pessoa</span></button>
-        <button class="mtab" data-set="classic" role="tab" id="t1" aria-controls="m1" aria-selected="false" tabindex="-1"><strong>Afeto Caseiro</strong><span>R$ 63,90 por pessoa</span></button>
-        <button class="mtab" data-set="classic" role="tab" id="t2" aria-controls="m2" aria-selected="false" tabindex="-1"><strong>Leveza Costeira</strong><span>R$ 66,90 por pessoa</span></button>
-        <button class="mtab" data-set="classic" role="tab" id="t3" aria-controls="m3" aria-selected="false" tabindex="-1"><strong>Conforto Francês</strong><span>R$ 69,90 por pessoa</span></button>
-        <button class="mtab" data-set="classic" role="tab" id="t4" aria-controls="m4" aria-selected="false" tabindex="-1"><strong>Monte seu menu</strong><span>a partir de R$ 79,90</span></button>
+        <button class="mtab" data-set="classic" role="tab" id="t0" aria-controls="m0" aria-selected="true" tabindex="0"><strong>Menu 1</strong><span>R$ 89,90 por pessoa</span></button>
+        <button class="mtab" data-set="classic" role="tab" id="t1" aria-controls="m1" aria-selected="false" tabindex="-1"><strong>Menu 2</strong><span>R$ 95,90 por pessoa</span></button>
+        <button class="mtab" data-set="classic" role="tab" id="t2" aria-controls="m2" aria-selected="false" tabindex="-1"><strong>Menu 3</strong><span>R$ 109,90 por pessoa</span></button>
+        <button class="mtab" data-set="classic" role="tab" id="t3" aria-controls="m3" aria-selected="false" tabindex="-1"><strong>Menu 4</strong><span>R$ 129,90 por pessoa</span></button>
+        <button class="mtab" data-set="classic" role="tab" id="t4" aria-controls="m4" aria-selected="false" tabindex="-1"><strong>Menu 5</strong><span>R$ 139,90 por pessoa</span></button>
         <button class="mtab" data-set="luxo" role="tab" id="t5" aria-controls="m5" aria-selected="false" tabindex="-1" hidden><strong>Aromas &amp; Mares</strong><span>R$ 85,90 por pessoa</span></button>
         <button class="mtab" data-set="luxo" role="tab" id="t6" aria-controls="m6" aria-selected="false" tabindex="-1" hidden><strong>Le Bistrô Paris</strong><span>R$ 89,90 por pessoa</span></button>
         <button class="mtab" data-set="luxo" role="tab" id="t7" aria-controls="m7" aria-selected="false" tabindex="-1" hidden><strong>Noite Italiana</strong><span>R$ 119,90 por pessoa</span></button>
         </div>
         <div>
           <div class="ticket inverse">
-          <div class="mpanel" data-set="classic" role="tabpanel" id="m0" aria-labelledby="t0" data-name="Essência do Campo" data-min="15" data-price="55.9">
-            <h3>Essência do Campo</h3>
-            <p class="sub">Escolha couvert ou salada como guarnição inicial.</p>
-            <dl><div><dt>Entrada</dt><dd>Bruschetta caprese</dd></div><div><dt>Salada</dt><dd>Escarola com bacon e lascas de parmesão</dd></div><div><dt>Prato principal</dt><dd>Frango ao molho com polenta cremosa</dd></div><div><dt>Sobremesa</dt><dd>Ambrósia</dd></div><div><dt>Opções de guarnição</dt><dd>Polenta ou arroz branco</dd></div></dl>
-            <p class="price"><small>mínimo de 15 pessoas</small>R$ 55,90 por pessoa</p>
+          <div class="mpanel" data-set="classic" role="tabpanel" id="m0" aria-labelledby="t0" data-name="Menu 1" data-min="15" data-price="89.9">
+            <h3>Menu 1</h3>
+            <dl><div><dt>Entrada</dt><dd>Bruschetta Caprese</dd></div><div><dt>Salada</dt><dd>Salada A La Mostarda</dd></div><div><dt>Prato principal</dt><dd>Ragu de acém</dd></div><div><dt>Sobremesa</dt><dd>Flan de laranja</dd></div><div><dt>Guarnições</dt><dd>Arroz branco, batata cozida e farofa de bacon</dd></div></dl>
+            <p class="price"><small>mínimo de 15 pessoas</small>R$ 89,90 por pessoa</p>
           </div>
-          <div class="mpanel" data-set="classic" role="tabpanel" id="m1" aria-labelledby="t1" data-name="Afeto Caseiro" data-min="12" data-price="63.9" hidden>
-            <h3>Afeto Caseiro</h3>
-            <p class="sub">Escolha couvert ou salada como guarnição inicial.</p>
-            <dl><div><dt>Entrada</dt><dd>Barqueta com patê de azeitona</dd></div><div><dt>Salada</dt><dd>Manga com rúcula, tomate-cereja, queijo provolone, orégano, sal e azeite</dd></div><div><dt>Prato principal</dt><dd>Bife à rolê com farofa de alho-poró</dd></div><div><dt>Sobremesa</dt><dd>Flan de laranja</dd></div><div><dt>Opções de guarnição</dt><dd>Purê de mandioquinha ou arroz branco com feijão carioquinha</dd></div></dl>
-            <p class="price"><small>mínimo de 12 pessoas</small>R$ 63,90 por pessoa</p>
+          <div class="mpanel" data-set="classic" role="tabpanel" id="m1" aria-labelledby="t1" data-name="Menu 2" data-min="12" data-price="95.9" hidden>
+            <h3>Menu 2</h3>
+            <dl><div><dt>Entrada</dt><dd>Ratatouille</dd></div><div><dt>Salada</dt><dd>Salada Caprese</dd></div><div><dt>Prato principal</dt><dd>Frango na manteiga com ervas</dd></div><div><dt>Sobremesa</dt><dd>Mousse</dd></div><div><dt>Guarnições</dt><dd>Arroz de brócolis e legumes salteados</dd></div></dl>
+            <p class="price"><small>mínimo de 12 pessoas</small>R$ 95,90 por pessoa</p>
           </div>
-          <div class="mpanel" data-set="classic" role="tabpanel" id="m2" aria-labelledby="t2" data-name="Leveza Costeira" data-min="10" data-price="66.9" hidden>
-            <h3>Leveza Costeira</h3>
-            <p class="sub">Escolha couvert ou salada como guarnição inicial.</p>
-            <dl><div><dt>Entrada</dt><dd>Vinagrete com torrada</dd></div><div><dt>Salada</dt><dd>Coleslaw</dd></div><div><dt>Prato principal</dt><dd>Tilápia ao Mediterrâneo, com farofa de cebola</dd></div><div><dt>Sobremesa</dt><dd>Mousse de limão</dd></div><div><dt>Opções de guarnição</dt><dd>Quinoa ou arroz branco</dd></div></dl>
-            <p class="price"><small>mínimo de 10 pessoas</small>R$ 66,90 por pessoa</p>
+          <div class="mpanel" data-set="classic" role="tabpanel" id="m2" aria-labelledby="t2" data-name="Menu 3" data-min="10" data-price="109.9" hidden>
+            <h3>Menu 3</h3>
+            <dl><div><dt>Entrada</dt><dd>Bruschetta 3 queijos</dd></div><div><dt>Salada</dt><dd>Salada Parisiense</dd></div><div><dt>Prato principal</dt><dd>Tilápia ao Mediterrâneo</dd></div><div><dt>Sobremesa</dt><dd>Panna cotta com geleia de frutas vermelhas</dd></div><div><dt>Guarnições</dt><dd>Arroz branco e farofa de cebola</dd></div></dl>
+            <p class="price"><small>mínimo de 10 pessoas</small>R$ 109,90 por pessoa</p>
           </div>
-          <div class="mpanel" data-set="classic" role="tabpanel" id="m3" aria-labelledby="t3" data-name="Conforto Francês" data-min="6" data-price="69.9" hidden>
-            <h3>Conforto Francês</h3>
-            <p class="sub">Escolha couvert ou salada como guarnição inicial.</p>
-            <dl><div><dt>Entrada</dt><dd>Quiche de brócolis com queijo parmesão</dd></div><div><dt>Salada</dt><dd>Parisiense</dd></div><div><dt>Prato principal</dt><dd>Aligot acompanhado de fraldinha cozida</dd></div><div><dt>Sobremesa</dt><dd>Pavê de chocolate</dd></div><div><dt>Opções de guarnição</dt><dd>Aligot de batata lavada ou purê de batata-doce</dd></div></dl>
-            <p class="price"><small>mínimo de 6 pessoas</small>R$ 69,90 por pessoa</p>
+          <div class="mpanel" data-set="classic" role="tabpanel" id="m3" aria-labelledby="t3" data-name="Menu 4" data-min="8" data-price="129.9" hidden>
+            <h3>Menu 4</h3>
+            <dl><div><dt>Entrada</dt><dd>Bruschetta de roast beef</dd></div><div><dt>Salada</dt><dd>Salada A La Mostarda</dd></div><div><dt>Prato principal</dt><dd>Pappardelli Alfredo com tiras de alcatra</dd></div><div><dt>Sobremesa</dt><dd>Ambrosia</dd></div></dl>
+            <p class="price"><small>mínimo de 8 pessoas</small>R$ 129,90 por pessoa</p>
           </div>
-          <div class="mpanel" data-set="classic" role="tabpanel" id="m4" aria-labelledby="t4" data-name="Monte seu menu" data-min="8" data-price="79.90" data-max="99.90" hidden>
-            <h3>Monte seu menu</h3>
-            <p class="sub">Combine saladas, entradas, pratos principais e sobremesas do seu jeito.</p>
-            <div class="cols">
-              <dl>
-                <div><dt>Saladas</dt><dd><ul><li>Grão-de-bico, cebola roxa, tomate-cereja, azeitona e azeite</li><li>Salada de feijão vermelho</li><li>Rúcula, cenoura ralada, tomate, cebola roxa, queijo branco e molho de mostarda e mel</li></ul></dd></div>
-                <div><dt>Entradas</dt><dd><ul><li>Quiche de cebola</li><li>Provoleta</li><li>Avocado com atum</li></ul></dd></div>
-              </dl>
-              <dl>
-                <div><dt>Pratos principais</dt><dd><ul><li>Risoto de tomate seco ou funghi</li><li>Strogonoff (escolher guarnição)</li><li>Papardeli ao molho Alfredo</li><li>Nhoque ao molho pesto</li></ul></dd></div>
-                <div><dt>Guarnições</dt><dd>Filé mignon, alcatra, ballotine à la cordon blanc ou peito de frango</dd></div>
-                <div><dt>Sobremesas</dt><dd><ul><li>Mousse de chocolate ou maracujá</li><li>Torta de limão</li><li>Sorbet (com a fruta de preferência)</li></ul></dd></div>
-              </dl>
-            </div>
-            <p class="price"><small>mínimo de 8 pessoas</small>R$ 79,90 até R$ 99,90 por pessoa</p>
+          <div class="mpanel" data-set="classic" role="tabpanel" id="m4" aria-labelledby="t4" data-name="Menu 5" data-min="6" data-price="139.9" hidden>
+            <h3>Menu 5</h3>
+            <dl><div><dt>Entrada</dt><dd>Canapés</dd></div><div><dt>Salada</dt><dd>Salada Parisiense</dd></div><div><dt>Prato principal</dt><dd>Nhoque ao pesto com filé mignon</dd></div><div><dt>Sobremesa</dt><dd>Sorbet</dd></div></dl>
+            <p class="price"><small>mínimo de 6 pessoas</small>R$ 139,90 por pessoa</p>
           </div>
           <div class="mpanel" data-set="luxo" role="tabpanel" id="m5" aria-labelledby="t5" data-name="Aromas &amp; Mares" data-min="8" data-price="85.90" hidden>
             <h3>Aromas &amp; Mares</h3>
