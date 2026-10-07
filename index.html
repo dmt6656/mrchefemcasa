@@ -130,12 +130,12 @@ section.sep{border-top:1px solid var(--line)}
 .ticket .cols{display:grid;gap:1rem 2.5rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .ticket .price{font-family:var(--serif);font-size:1.8rem;text-align:right;margin:1.75rem 0 0;max-width:none}
 .ticket .price small{display:block;font-family:var(--sans);font-size:.95rem}
-.mcalc{margin-top:1.25rem;border:2px solid var(--ink);border-radius:8px;padding:1.1rem 1.25rem;display:flex;flex-wrap:wrap;gap:1rem 1.75rem;align-items:end}
-.mcalc label{width:170px}
+.mcalc{margin-top:1.25rem;border:2px solid var(--ink);border-radius:8px;padding:1.1rem 1.25rem;display:grid;grid-template-columns:170px minmax(0,1fr);gap:1rem 1.75rem;align-items:end}
+.mcalc label{width:auto}
 .mcalc input{border-color:var(--ink)}
 .mtotal strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1.2}
-.mcalc .btn{margin-left:auto}
-.mnote{flex-basis:100%;font-size:.9rem;margin:0;max-width:none}
+.mcalc .btn{grid-column:1/-1;width:100%;margin:.25rem 0 0;text-align:center}
+.mnote{grid-column:1/-1;font-size:.9rem;margin:0;max-width:none}
 @media (max-width:860px){
   .mwrap{grid-template-columns:1fr}
   .mtabs{display:flex;overflow-x:auto;padding:4px 2px 10px}
@@ -195,6 +195,7 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--paper);bord
 @media (prefers-reduced-motion:reduce){.ccard,.cicon,.cgo{transition:none}.ccard:hover,.ccard:hover .cicon{transform:none}}
 footer.site{border-top:1px solid var(--line);padding:2rem 0;font-size:.95rem;background:var(--paper);position:static}
 footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer.site .credit{flex-basis:100%;text-align:center;font-size:.85rem;opacity:.75;padding-top:.6rem;margin-top:.2rem;border-top:1px solid var(--line)}
 
 /* cupom de boas-vindas */
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -306,7 +307,7 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
   .ticket .sub{margin-bottom:1.25rem}
   .ticket .cols{grid-template-columns:1fr;gap:1rem}
   .ticket .price{font-size:1.5rem;margin-top:1.4rem}
-  .mcalc{flex-direction:column;align-items:stretch;gap:.9rem;padding:1rem}
+  .mcalc{grid-template-columns:1fr;align-items:stretch;gap:.9rem;padding:1rem}
   .mcalc label{width:100%}
   .mcalc .btn{width:100%;margin-left:0}
 
@@ -624,10 +625,10 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
           <span class="cv">(41) 98452-4131</span>
           <span class="cgo">Chamar agora</span>
         </a>
-        <a class="ccard" href="https://www.instagram.com/wmartinaind" target="_blank" rel="noopener">
+        <a class="ccard" href="https://www.instagram.com/mrchefemcasa" target="_blank" rel="noopener">
           <span class="cicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
           <span class="ct">Instagram</span>
-          <span class="cv">@wmartinaind</span>
+          <span class="cv">@mrchefemcasa</span>
           <span class="cgo">Ver perfil</span>
         </a>
       </div>
@@ -638,7 +639,8 @@ html[data-theme=luxo] .cupom::backdrop{background:rgba(0,0,0,.82)}
 <footer class="site">
   <div class="wrap">
     <span>© 2026 M.R. Chef em Casa</span>
-    <span>CNPJ 00.000.000/0001-00</span>
+    <span>CNPJ 64.729.499/0001-55</span>
+    <span class="credit">Desenvolvido por dmt66</span>
   </div>
 </footer>
 
