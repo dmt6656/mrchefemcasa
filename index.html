@@ -555,6 +555,7 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
         <button type="button" class="luxo-pill" id="basicBtn" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Básicos</button>
         <button type="button" class="luxo-pill" id="almocoBtn" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Almoço</button>
         <button type="button" class="luxo-pill" id="luxoBtn" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>Jantar</button>
+        <button type="button" class="luxo-pill" id="fingerfoodBtn" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19L19 5"/><circle cx="7.5" cy="16.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="16.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/></svg>Finger food</button>
       </div>
       <div class="mwrap">
         <div class="mtabs" role="tablist" aria-label="Cardápios" aria-orientation="vertical">
@@ -571,6 +572,9 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
         <button class="mtab" data-set="almoco" role="tab" id="t10" aria-controls="m10" aria-selected="false" tabindex="-1" hidden><strong>Mare &amp; Limone</strong><span>R$ 89,90 por pessoa</span></button>
         <button class="mtab" data-set="almoco" role="tab" id="t11" aria-controls="m11" aria-selected="false" tabindex="-1" hidden><strong>Sabores de Morretes</strong><span>R$ 95,90 por pessoa</span></button>
         <button class="mtab" data-set="almoco" role="tab" id="t12" aria-controls="m12" aria-selected="false" tabindex="-1" hidden><strong>Una Tavola Italiana</strong><span>R$ 129,90 por pessoa</span></button>
+        <button class="mtab" data-set="fingerfood" role="tab" id="t13" aria-controls="m13" aria-selected="false" tabindex="-1" hidden><strong>Aperitivo Clássico</strong><span>R$ 95,90 por pessoa</span></button>
+        <button class="mtab" data-set="fingerfood" role="tab" id="t14" aria-controls="m14" aria-selected="false" tabindex="-1" hidden><strong>Aperitivo Reserva</strong><span>R$ 115,90 por pessoa</span></button>
+        <button class="mtab" data-set="fingerfood" role="tab" id="t15" aria-controls="m15" aria-selected="false" tabindex="-1" hidden><strong>Aperitivo Gala</strong><span>R$ 145,90 por pessoa</span></button>
         </div>
         <div>
           <div class="ticket inverse">
@@ -641,6 +645,21 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
             <h3>Una Tavola Italiana</h3>
             <dl><div><dt>Entrada</dt><dd>Crostini de Parmesão</dd></div><div><dt>Salada</dt><dd>Burrata<span class="ing">(tomate, manjericão, azeite e sal)</span></dd></div><div><dt>Prato principal</dt><dd>Lasanha à Bolonhesa</dd></div><div><dt>Sobremesa</dt><dd>Tiramisù</dd></div><div><dt>Guarnições</dt><dd>Arroz Branco</dd></div></dl>
             <p class="price"><small>mínimo de 8 pessoas</small>R$ 129,90 por pessoa</p>
+          </div>
+          <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m13" aria-labelledby="t13" data-name="Aperitivo Clássico" data-min="15" data-price="95.9" hidden>
+            <h3>Aperitivo Clássico</h3>
+            <dl><div><dt>Sanduíches</dt><dd>Pão de Forma com Presunto, Queijo e Requeijão</dd></div><div><dt>Bruschetta</dt><dd>Bruschetta Caprese</dd></div><div><dt>Barquinha</dt><dd>Barquinha com Salpicão</dd></div><div><dt>Pinchos</dt><dd>Tomate-cereja e Queijo com Molho Pesto<span class="ing">(e também: Pão Torrado, Queijo, Tomate e Salame; Ovo de Codorna, Picles e Salame)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Gorgonzola, Damasco e Noz<span class="ing">(e também: Queijo Brie, Presunto de Parma e Uva Verde; Queijo Gouda, Salame Italiano e Azeitona Preta)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue no Palito de Morango com Chocolate</dd></div></dl>
+            <p class="price"><small>mínimo de 15 pessoas</small>R$ 95,90 por pessoa</p>
+          </div>
+          <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m14" aria-labelledby="t14" data-name="Aperitivo Reserva" data-min="15" data-price="115.9" hidden>
+            <h3>Aperitivo Reserva</h3>
+            <dl><div><dt>Entrada</dt><dd>Quibe Assado</dd></div><div><dt>Bruschetta</dt><dd>Bruschetta Caprese</dd></div><div><dt>Crostini</dt><dd>Crostini de Parmesão com Patê de Tomate</dd></div><div><dt>Pinchos</dt><dd>Dadinho de Tapioca com Geleia de Pimenta<span class="ing">(e também: Tomate Seco, Rúcula e Queijo Mussarela; Presunto de Parma, Tomate-cereja e Pão banhados no Azeite)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Gouda, Brie e Parmesão<span class="ing">(e também: Presunto de Parma, Salame, Copa e Carpaccio Bovino com Alcaparra e Azeite de Oliva)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue de Espeto de Morango, Uva Verde e Chocolate</dd></div></dl>
+            <p class="price"><small>mínimo de 15 pessoas</small>R$ 115,90 por pessoa</p>
+          </div>
+          <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m15" aria-labelledby="t15" data-name="Aperitivo Gala" data-min="15" data-price="145.9" hidden>
+            <h3>Aperitivo Gala</h3>
+            <dl><div><dt>Bruschetta</dt><dd>Bruschetta de Rosbife com Molho Pesto</dd></div><div><dt>Entrada</dt><dd>Camarão Salteado na Manteiga com Especiarias</dd></div><div><dt>Barquinha</dt><dd>Barquinha com Salpicão e Tartar de Salmão</dd></div><div><dt>Pinchos</dt><dd>Palmito, Picles, Ovo de Codorna e Salame<span class="ing">(e também: Caprese — Tomate-cereja e Queijo Mussarela com Molho Pesto)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Mussarela, Parmesão, Brie, Gorgonzola e Gouda<span class="ing">(com Damasco, Tâmara, Nozes, Castanha-do-Pará, Presunto de Parma e Salame)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue de Espeto de Morango, Uva e Banana com Chocolate</dd></div></dl>
+            <p class="price"><small>mínimo de 15 pessoas</small>R$ 145,90 por pessoa</p>
           </div>
           </div>
           <div class="mcalc">
@@ -895,7 +914,7 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
       allPanels=[].slice.call(document.querySelectorAll('.mpanel')),
       qty=document.getElementById('mqty'),out=document.getElementById('mtotal'),
       note=document.getElementById('mnote'),ord=document.getElementById('morder'),
-      btn=document.getElementById('luxoBtn'),btnA=document.getElementById('almocoBtn'),btnB=document.getElementById('basicBtn'),veil=document.getElementById('veil'),root=document.documentElement,
+      btn=document.getElementById('luxoBtn'),btnA=document.getElementById('almocoBtn'),btnB=document.getElementById('basicBtn'),btnF=document.getElementById('fingerfoodBtn'),veil=document.getElementById('veil'),root=document.documentElement,
       reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       set='classic',tabs=[],panels=[],cur=0,busy=false;
   function brl(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
@@ -982,7 +1001,7 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
   function apply(m){
     mode=m;set=m;
     if(m==='luxo'||m==='almoco')root.setAttribute('data-theme',m);else root.removeAttribute('data-theme');
-    btn.setAttribute('aria-pressed',m==='luxo');btnA.setAttribute('aria-pressed',m==='almoco');btnB.setAttribute('aria-pressed',m==='classic');
+    btn.setAttribute('aria-pressed',m==='luxo');btnA.setAttribute('aria-pressed',m==='almoco');btnB.setAttribute('aria-pressed',m==='classic');btnF.setAttribute('aria-pressed',m==='fingerfood');
     swapText(m);pick();show(0);
   }
   function go(target){
@@ -990,12 +1009,13 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
     var veilNeeded=true;
     if(reduce||!veilNeeded){apply(target);return}
     busy=true;
-    veil.style.background=target==='luxo'?'#0c0c0c':target==='almoco'?'#6b0b0c':'#fff8ca';veil.style.opacity=1;
+    veil.style.background=target==='luxo'?'#0c0c0c':target==='almoco'?'#6b0b0c':target==='fingerfood'?'#caa94a':'#fff8ca';veil.style.opacity=1;
     setTimeout(function(){apply(target);veil.style.opacity=0;setTimeout(function(){busy=false},320)},320);
   }
   btn.addEventListener('click',function(){go('luxo')});
   btnA.addEventListener('click',function(){go('almoco')});
   btnB.addEventListener('click',function(){go('classic')});
+  btnF.addEventListener('click',function(){go('fingerfood')});
   pick();show(0);
   var sec=document.getElementById('cardapios');
   if('IntersectionObserver' in window&&sec){
