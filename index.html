@@ -129,6 +129,9 @@ section.sep{border-top:1px solid var(--line)}
 .ticket dl{margin:0;display:grid;gap:1rem;align-content:start}
 .ticket dt{font-weight:700}
 .ticket dd{margin:.1rem 0 0}
+.ticket dd ul{list-style:none;margin:.35rem 0 0;padding:0;display:grid;gap:.3rem}
+.ticket dd li{position:relative;padding-left:1rem}
+.ticket dd li::before{content:'–';position:absolute;left:0;opacity:.7}
 .ticket ul{margin:.2rem 0 0;padding-left:1.1rem}
 .ticket li{margin-bottom:.25rem}
 .ticket .cols{display:grid;gap:1rem 2.5rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
@@ -273,7 +276,7 @@ html:has(dialog.cupom[open]){overflow:hidden}
 html[data-theme=luxo]{--paper:#0c0c0c;--ink:#f6c04f;color-scheme:dark}
 html[data-theme=almoco]{--paper:#6b0b0c;--ink:#fff8ca;color-scheme:dark}
 html[data-theme=almoco] .cupom::backdrop{background:rgba(0,0,0,.72)}
-html[data-theme=fingerfood]{--paper:#f4ead1;--ink:#234b3f;color-scheme:light}
+html[data-theme=fingerfood]{--paper:#f7d978;--ink:#4a2c17;color-scheme:light}
 html[data-theme=fingerfood] .cupom::backdrop{background:rgba(0,0,0,.55)}
 html[data-theme=luxo] .inverse{background:#171717;color:var(--ink);--line:color-mix(in srgb,var(--ink) 35%,#171717);--soft:color-mix(in srgb,var(--ink) 82%,#171717)}
 html[data-theme=luxo] .hero{background:radial-gradient(ellipse at 72% 45%,#2b2b2b 0%,#121212 58%,#0c0c0c 100%)}
@@ -650,17 +653,131 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
           </div>
           <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m13" aria-labelledby="t13" data-name="Aperitivo Clássico" data-min="15" data-price="95.9" hidden>
             <h3>Aperitivo Clássico</h3>
-            <dl><div><dt>Sanduíches</dt><dd>Pão de Forma com Presunto, Queijo e Requeijão</dd></div><div><dt>Bruschetta</dt><dd>Bruschetta Caprese</dd></div><div><dt>Barquinha</dt><dd>Barquinha com Salpicão</dd></div><div><dt>Pinchos</dt><dd>Tomate-cereja e Queijo com Molho Pesto<span class="ing">(e também: Pão Torrado, Queijo, Tomate e Salame; Ovo de Codorna, Picles e Salame)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Gorgonzola, Damasco e Noz<span class="ing">(e também: Queijo Brie, Presunto de Parma e Uva Verde; Queijo Gouda, Salame Italiano e Azeitona Preta)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue no Palito de Morango com Chocolate</dd></div></dl>
+            <dl>
+              <div>
+                <dt>Sanduíche</dt>
+                <dd>Pão de Forma, Presunto, Queijo e Requeijão</dd>
+              </div>
+              <div>
+                <dt>Bruschetta</dt>
+                <dd>Bruschetta Caprese</dd>
+              </div>
+              <div>
+                <dt>Barqueta</dt>
+                <dd>Barqueta de Salpicão</dd>
+              </div>
+              <div>
+                <dt>Pinchos</dt>
+                <dd>
+                  <ul>
+                    <li>Tomate-cereja e Queijo, Regados com Molho Pesto</li>
+                    <li>Pão Torrado, Queijo, Tomate e Salame</li>
+                    <li>Ovo de Codorna, Picles e Salame</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Tábua de frios ou pinchos</dt>
+                <dd>
+                  <ul>
+                    <li>Queijo Gorgonzola, Damasco e Nozes</li>
+                    <li>Queijo Brie, Presunto de Parma e Uva Verde</li>
+                    <li>Queijo Gouda, Salame Italiano e Azeitona Preta</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Fondue no palito</dt>
+                <dd>Morangos com Chocolate</dd>
+              </div>
+            </dl>
             <p class="price"><small>mínimo de 15 pessoas</small>R$ 95,90 por pessoa</p>
           </div>
           <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m14" aria-labelledby="t14" data-name="Aperitivo Reserva" data-min="15" data-price="115.9" hidden>
             <h3>Aperitivo Reserva</h3>
-            <dl><div><dt>Entrada</dt><dd>Quibe Assado</dd></div><div><dt>Bruschetta</dt><dd>Bruschetta Caprese</dd></div><div><dt>Crostini</dt><dd>Crostini de Parmesão com Patê de Tomate</dd></div><div><dt>Pinchos</dt><dd>Dadinho de Tapioca com Geleia de Pimenta<span class="ing">(e também: Tomate Seco, Rúcula e Queijo Mussarela; Presunto de Parma, Tomate-cereja e Pão banhados no Azeite)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Gouda, Brie e Parmesão<span class="ing">(e também: Presunto de Parma, Salame, Copa e Carpaccio Bovino com Alcaparra e Azeite de Oliva)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue de Espeto de Morango, Uva Verde e Chocolate</dd></div></dl>
+            <dl>
+              <div>
+                <dt>Bruschetta</dt>
+                <dd>Bruschetta Caprese</dd>
+              </div>
+              <div>
+                <dt>Entrada</dt>
+                <dd>Quibe Assado</dd>
+              </div>
+              <div>
+                <dt>Crostini</dt>
+                <dd>Crostini de Parmesão com Patê de Tomate</dd>
+              </div>
+              <div>
+                <dt>Pinchos</dt>
+                <dd>
+                  <ul>
+                    <li>Dadinho de Tapioca com Geleia de Pimenta</li>
+                    <li>Tomate Seco, Rúcula e Queijo Mussarela</li>
+                    <li>Presunto de Parma, Tomate-cereja e Pão, Regados com Azeite de Oliva</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Tábua de frios</dt>
+                <dd>
+                  <ul>
+                    <li>Queijos: Gouda, Brie e Parmesão</li>
+                    <li>Frios: Presunto de Parma, Salame, Copa e Carpaccio Bovino com Alcaparras e Azeite de Oliva</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Fondue no espeto</dt>
+                <dd>Morango e Uva Verde com Chocolate</dd>
+              </div>
+            </dl>
             <p class="price"><small>mínimo de 15 pessoas</small>R$ 115,90 por pessoa</p>
           </div>
           <div class="mpanel" data-set="fingerfood" role="tabpanel" id="m15" aria-labelledby="t15" data-name="Aperitivo Gala" data-min="15" data-price="145.9" hidden>
             <h3>Aperitivo Gala</h3>
-            <dl><div><dt>Bruschetta</dt><dd>Bruschetta de Rosbife com Molho Pesto</dd></div><div><dt>Entrada</dt><dd>Camarão Salteado na Manteiga com Especiarias</dd></div><div><dt>Barquinha</dt><dd>Barquinha com Salpicão e Tartar de Salmão</dd></div><div><dt>Pinchos</dt><dd>Palmito, Picles, Ovo de Codorna e Salame<span class="ing">(e também: Caprese — Tomate-cereja e Queijo Mussarela com Molho Pesto)</span></dd></div><div><dt>Tábua de frios</dt><dd>Queijo Mussarela, Parmesão, Brie, Gorgonzola e Gouda<span class="ing">(com Damasco, Tâmara, Nozes, Castanha-do-Pará, Presunto de Parma e Salame)</span></dd></div><div><dt>Sobremesa</dt><dd>Fondue de Espeto de Morango, Uva e Banana com Chocolate</dd></div></dl>
+            <dl>
+              <div>
+                <dt>Bruschetta</dt>
+                <dd>Bruschetta de Rosbife com Molho Pesto</dd>
+              </div>
+              <div>
+                <dt>Entrada</dt>
+                <dd>Camarão Salteado na Manteiga com Especiarias</dd>
+              </div>
+              <div>
+                <dt>Barqueta</dt>
+                <dd>
+                  <ul>
+                    <li>Barqueta de Salpicão</li>
+                    <li>Barqueta com Tartar de Salmão</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Pinchos</dt>
+                <dd>
+                  <ul>
+                    <li>Palmito, Picles, Ovo de Codorna e Salame</li>
+                    <li>Caprese: Tomate-cereja e Queijo Mussarela, Acompanhados de Molho Pesto</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Tábua de frios</dt>
+                <dd>
+                  <ul>
+                    <li>Queijos: Mussarela, Parmesão, Brie, Gorgonzola e Gouda</li>
+                    <li>Frutas e acompanhamentos: Damasco, Tâmara, Nozes e Castanha-do-Pará</li>
+                    <li>Frios: Presunto de Parma e Salame</li>
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>Fondue no espeto</dt>
+                <dd>Morango, Uva e Banana com Chocolate</dd>
+              </div>
+            </dl>
             <p class="price"><small>mínimo de 15 pessoas</small>R$ 145,90 por pessoa</p>
           </div>
           </div>
@@ -1011,7 +1128,7 @@ html[data-theme=luxo] .hero .actions .btn:first-child{animation-name:ringLuxo}
     var veilNeeded=true;
     if(reduce||!veilNeeded){apply(target);return}
     busy=true;
-    veil.style.background=target==='luxo'?'#0c0c0c':target==='almoco'?'#6b0b0c':target==='fingerfood'?'#f4ead1':'#fff8ca';veil.style.opacity=1;
+    veil.style.background=target==='luxo'?'#0c0c0c':target==='almoco'?'#6b0b0c':target==='fingerfood'?'#f7d978':'#fff8ca';veil.style.opacity=1;
     setTimeout(function(){apply(target);veil.style.opacity=0;setTimeout(function(){busy=false},320)},320);
   }
   btn.addEventListener('click',function(){go('luxo')});
